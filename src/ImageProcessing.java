@@ -17,38 +17,49 @@ public class ImageProcessing {
         int[][] flowerImageData = imgToTwoD("./images/flower.jpg");
         int[][] kittenImageData = imgToTwoD("./images/kitten.jpg");
 
-        // Or load your own image using a URL!
-        // int[][] imageData = imgToTwoD("https://content.codecademy.com/projects/project_thumbnails/phaser/bug-dodger.png");
+        // Or use local Path
+        /* int[][] appleImageData = imgToTwoD("C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\images\\apple.jpg");
+        int[][] flowerImageData = imgToTwoD("C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\images\\flower.jpg");
+        int[][] kittenImageData = imgToTwoD("C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\images\\kitten.jpg");*/
 
-        // viewImageData(imageData);
+        // Or load your own image using a URL!
+
+        // viewImageData(imageData); This function is used for test purpose only
 
         // Trim an image
         int[][] trimmedApple = trimBorders(appleImageData, 60);
-        twoDToImage(trimmedApple, "./images/trimmed-apple.jpg");
+        twoDToImage(trimmedApple, "./new images/trimmed-apple");
+        // Or use a local path : twoDToImage(trimmedApple, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\trimmed-apple.jpg");
 
         // Convert image colors into negative colors
         int[][] negativeApple = negativeColor(appleImageData);
-        twoDToImage(negativeApple, "./images/negative-apple.jpg");
+        twoDToImage(negativeApple, "./new images/negative-apple.jpg");
+        // twoDToImage(negativeApple, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\negative-apple.jpg");
 
         // Stretch horizontally an image
         int[][] stretchedKitten = stretchHorizontally(kittenImageData);
-        twoDToImage(stretchedKitten, "./images/stretched-kitten.jpg");
+        twoDToImage(stretchedKitten, "./new images/stretched-kitten.jpg");
+        // twoDToImage(stretchedKitten, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\stretched-kitten.jpg");
 
         // Shrink vertically an image
         int[][] shrinkedFlower = shrinkVertically(flowerImageData);
-        twoDToImage(shrinkedFlower, "./images/shrinked-flower.jpg");
+        twoDToImage(shrinkedFlower, "./new images/shrinked-flower.jpg");
+        // twoDToImage(shrinkedFlower, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\shrinked-flower.jpg");
 
         // Flip an image both horizontally and vertically
         int[][] invertedFlower = invertImage(flowerImageData);
-        twoDToImage(invertedFlower, "./images/inverted-flower.jpg");
+        twoDToImage(invertedFlower, "./new images/inverted-flower.jpg");
+        // twoDToImage(invertedFlower, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\inverted-flower.jpg");
 
         // Apply a color filter to an image
         int[][] coloredKitten = colorFilter(kittenImageData, -75, 30, -30);
-        twoDToImage(coloredKitten, "./images/colored-kitten.jpg");
+        twoDToImage(coloredKitten, "./new images/colored-kitten.jpg");
+        // twoDToImage(coloredKitten, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\colored-kitten.jpg");
 
         // Apply all the filters on the same time
         int[][] allFilters = stretchHorizontally(shrinkVertically(colorFilter(negativeColor(trimBorders(invertImage(appleImageData), 50)), 200, 20, 40)));
-        twoDToImage(allFilters, "./images/all-filters.jpg");
+        twoDToImage(allFilters, "./new images/all-filters.jpg");
+        // twoDToImage(allFilters, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\all-filters.jpg");
 
 
         // PAINTING WITH PIXELS
@@ -56,12 +67,14 @@ public class ImageProcessing {
         // Paint a random image
         int[][] canvas1 = new int[500][500];
         int[][] randomPixels = paintRandomImage(canvas1);
-        twoDToImage(randomPixels, "./images/random-pixels.jpg");
+        twoDToImage(randomPixels, "./new images/random-pixels.jpg");
+        // twoDToImage(randomPixels, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\random-pixels.jpg");
 
         // Make a dummy canva of rectangles
         int[][] canvas2 = new int[500][500];
         int[][] rectangles = generateRectangles(canvas2, 6);
-        twoDToImage(rectangles, "./images/rectangle.jpg");
+        twoDToImage(rectangles, "./new images/rectangle.jpg");
+        // twoDToImage(rectangles, "C:\\Users\\chana\\IdeaProjects\\image-processing\\src\\new images\\rectangle.jpg");
     }
 
 
